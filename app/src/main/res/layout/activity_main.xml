@@ -7,12 +7,12 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/Hello_World"
+        android:id="@+id/text_view_hello_world"
         android:layout_width="1150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="176dp"
         android:layout_marginTop="311dp"
-        android:text="@string/hello_world"
+        android:text="@string/hello_android"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
