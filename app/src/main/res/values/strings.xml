@@ -5,6 +5,8 @@
     <string name="hello">Hello</string>
     <string name="jnu">JNU</string>
     <string name="change_text">Change Text</string>
+    <string name="string_item_name" />
+    <string name="string_item_price" />
 </resources>
 
 
