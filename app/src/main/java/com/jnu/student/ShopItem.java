@@ -1,7 +1,9 @@
 package com.jnu.student;
 
 
-public class ShopItem{
+import java.io.Serializable;
+
+public class ShopItem implements Serializable {
     public int getImageResourceId() {
         return imageResourceId;
     }
