@@ -6,7 +6,7 @@ public class ShopItem{
         return imageResourceId;
     }
 
-    private int imageResourceId;
+    private final int imageResourceId;
 
     public String getName() {
         return name;
@@ -25,4 +25,11 @@ public class ShopItem{
         this.imageResourceId =imageResourceId_;
     }
 
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

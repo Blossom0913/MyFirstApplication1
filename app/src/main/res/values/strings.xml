@@ -7,6 +7,7 @@
     <string name="change_text">Change Text</string>
     <string name="string_item_name" />
     <string name="string_item_price" />
+    <string name="string_ok" >OK</string>
 </resources>
 
 
