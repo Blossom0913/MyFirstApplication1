@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
@@ -24,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
         ViewPager2 viewPager = findViewById(R.id.view_pager);
         TabLayout tabLayout = findViewById(R.id.tab_layout);
         // 创建适配器
-        FragmentAdapter fragmentAdapter = new FragmentAdapter(getSupportFragmentManager(), getLifecycle());
-        viewPager.setAdapter(fragmentAdapter);
+
+        viewPager.setAdapter(new FragmentAdapter(this));
 
 
         // 将TabLayout和ViewPager2进行关联
@@ -36,9 +37,10 @@ public class MainActivity extends AppCompatActivity {
 
     public class FragmentAdapter extends FragmentStateAdapter {
         private static final int NUM_TABS = 3;
-        public FragmentAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
-            super(fragmentManager, lifecycle);
+        public FragmentAdapter(@NonNull FragmentActivity fragmentActivity) {
+            super(fragmentActivity);
         }
+
 
         @NonNull
         @Override
@@ -46,11 +48,11 @@ public class MainActivity extends AppCompatActivity {
             // 根据位置返回对应的Fragment实例
             switch (position) {
                 case 0:
-                    return new ShoppingListFragment();
+                    return ShoppingListFragment.newInstance();
                 case 1:
-                    return new TencentMapFragment();
+                    return TencentMapFragment.newInstance();
                 case 2:
-                    return new WebViewFragment();
+                    return WebViewFragment.newInstance();
                 default:
                     return null;
             }
