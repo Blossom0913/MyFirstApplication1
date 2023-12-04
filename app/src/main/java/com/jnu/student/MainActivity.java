@@ -15,7 +15,7 @@ import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 public class MainActivity extends AppCompatActivity {
-    private String []tabHeaderStrings = {"Shopping items","baidu maps","News"};
+    private String []tabHeaderStrings = {"Shopping items","baidu maps","News","Clock"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public class FragmentAdapter extends FragmentStateAdapter {
-        private static final int NUM_TABS = 3;
+        private static final int NUM_TABS = 4;
         public FragmentAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
             super(fragmentManager, lifecycle);
         }
@@ -51,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
                     return new TencentMapFragment();
                 case 2:
                     return new WebViewFragment();
+                case 3:
+                    return new ClockViewFragment();
                 default:
                     return null;
             }
